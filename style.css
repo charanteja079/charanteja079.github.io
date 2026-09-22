@@ -1,0 +1,561 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #090d14;
+  color: #e8edf5;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 7%;
+  background: rgba(9, 13, 20, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #202938;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.brand span,
+.hero span {
+  color: #62a8ff;
+}
+
+.nav a {
+  color: #aeb9c9;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+
+/* =========================
+   MAIN
+   ========================= */
+
+main {
+  max-width: 1050px;
+  margin: auto;
+  padding: 0 24px;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+  padding: 105px 0 75px;
+}
+
+.eyebrow,
+.tag {
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: #62a8ff;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.05;
+  margin: 15px 0;
+}
+
+.lead {
+  font-size: 22px;
+  color: #c4cfdd;
+  max-width: 720px;
+  margin-bottom: 8px;
+}
+
+.intro {
+  color: #8f9caf;
+  max-width: 720px;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.center {
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 11px 18px;
+  border: 1px solid #344157;
+  border-radius: 10px;
+  color: #e8edf5;
+  text-decoration: none;
+  transition: 0.2s;
+  background: transparent;
+}
+
+.btn.primary {
+  background: #1769d1;
+  border-color: #1769d1;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+section {
+  padding: 62px 0;
+  border-top: 1px solid #202938;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 0 0 18px;
+}
+
+section > p {
+  color: #aeb9c9;
+  max-width: 800px;
+}
+
+
+/* =========================
+   SKILLS
+   ========================= */
+
+.chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chips span {
+  padding: 8px 12px;
+  border: 1px solid #2b3749;
+  border-radius: 999px;
+  color: #c5cfdd;
+  background: #0e141e;
+}
+
+
+/* =========================
+   1s & 0s LABORATORY
+   ========================= */
+
+#binary-lab {
+  margin-top: 20px;
+}
+
+.binary-lab {
+  margin-top: 30px;
+  padding: 28px;
+  border-radius: 22px;
+  border: 1px solid #263245;
+  background: #0d131d;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+}
+
+.lab-header {
+  margin-bottom: 18px;
+}
+
+.lab-label {
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #62a8ff;
+  opacity: 0.8;
+}
+
+.lab-header h3 {
+  margin: 6px 0 0;
+  font-size: 20px;
+}
+
+
+/* INPUT */
+
+#textInput,
+#reverseInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #2b3749;
+  background: #080c12;
+  color: #e8edf5;
+  font-family: monospace;
+  font-size: 15px;
+  outline: none;
+  resize: vertical;
+  transition: 0.25s ease;
+}
+
+#textInput {
+  min-height: 110px;
+}
+
+#textInput:focus,
+#reverseInput:focus {
+  border-color: #62a8ff;
+  box-shadow: 0 0 25px rgba(98, 168, 255, 0.1);
+}
+
+#textInput::placeholder,
+#reverseInput::placeholder {
+  color: #7f8da2;
+}
+
+
+/* CONTROLS */
+
+.lab-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.lab-controls button {
+  cursor: pointer;
+}
+
+
+/* CONVERSION CARDS */
+
+.conversion-card {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #263245;
+  background: #0a0f17;
+  overflow: hidden;
+}
+
+.conversion-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.conversion-title span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(98, 168, 255, 0.08);
+  border: 1px solid rgba(98, 168, 255, 0.2);
+  color: #62a8ff;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.conversion-title strong {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.conversion-description {
+  margin: 5px 0 14px;
+  font-size: 13px;
+  color: #8f9caf;
+  line-height: 1.6;
+}
+
+
+/* OUTPUT */
+
+.code-output {
+  min-height: 24px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #070b11;
+  border: 1px solid #1d2837;
+  color: #cdd8e6;
+  font-family: monospace;
+  font-size: 14px;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+
+/* BINARY */
+
+.binary-card {
+  border-color: rgba(98, 168, 255, 0.25);
+}
+
+.binary-output {
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #05080d;
+  border: 1px solid #172334;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.8;
+  word-break: break-word;
+}
+
+.binary-byte {
+  display: inline-block;
+  padding: 7px 9px;
+  border-radius: 7px;
+  background: rgba(98, 168, 255, 0.07);
+  border: 1px solid rgba(98, 168, 255, 0.2);
+  color: #cfe4ff;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: binaryAppear 0.45s ease forwards;
+  letter-spacing: 1px;
+}
+
+@keyframes binaryAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* MACHINE BYTES */
+
+.machine-card {
+  border-color: #303c4f;
+}
+
+
+/* REVERSE CONVERSION */
+
+.reverse-lab {
+  margin-top: 22px;
+  padding: 22px;
+  border-radius: 16px;
+  border: 1px dashed #344157;
+  background: #0b1018;
+}
+
+.reverse-lab .conversion-title {
+  margin-bottom: 4px;
+}
+
+#reverseInput {
+  margin-top: 12px;
+  resize: none;
+}
+
+
+/* REVERSE RESULT */
+
+.reverse-output {
+  margin-top: 16px;
+  min-height: 30px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #070b11;
+  border: 1px solid #263245;
+  color: #e8edf5;
+  font-family: monospace;
+  font-size: 17px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+
+/* NOTE */
+
+.lab-note {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 193, 7, 0.04);
+  border: 1px solid rgba(255, 193, 7, 0.12);
+}
+
+.lab-note strong {
+  font-size: 13px;
+}
+
+.lab-note p {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #8f9caf;
+}
+
+
+/* =========================
+   PROJECTS
+   ========================= */
+
+.section-note {
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.card {
+  padding: 25px;
+  border: 1px solid #263245;
+  border-radius: 16px;
+  background: #0d131d;
+}
+
+.card h3 {
+  font-size: 23px;
+  margin: 8px 0;
+}
+
+.card p {
+  color: #aeb9c9;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #151d29;
+  color: #91a0b4;
+  font-size: 13px;
+}
+
+
+/* =========================
+   EDUCATION
+   ========================= */
+
+.edu {
+  border-left: 3px solid #1769d1;
+  padding-left: 18px;
+}
+
+.edu p {
+  color: #aeb9c9;
+}
+
+
+/* =========================
+   CONTACT
+   ========================= */
+
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+  text-align: center;
+  padding: 35px;
+  color: #7f8da2;
+  border-top: 1px solid #202938;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+
+  .nav nav {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lead {
+    font-size: 19px;
+  }
+
+  .binary-lab {
+    padding: 18px;
+  }
+
+  .code-output {
+    font-size: 12px;
+  }
+
+  .binary-output {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .binary-byte {
+    padding: 6px 7px;
+  }
+
+  .lab-controls {
+    flex-direction: column;
+  }
+
+  .lab-controls .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
