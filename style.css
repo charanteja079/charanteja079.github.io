@@ -1,0 +1,302 @@
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#090d14;color:#e8edf5;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+.nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:18px 7%;background:rgba(9,13,20,.92);backdrop-filter:blur(12px);border-bottom:1px solid #202938}
+.brand{font-size:24px;font-weight:800}.brand span,.hero span{color:#62a8ff}
+.nav a{color:#aeb9c9;text-decoration:none;margin-left:20px;font-size:14px}.nav a:hover{color:#fff}
+main{max-width:1050px;margin:auto;padding:0 24px}
+.hero{padding:105px 0 75px}
+.eyebrow,.tag{font-size:12px;letter-spacing:.16em;color:#62a8ff;font-weight:700}
+.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.05;margin:15px 0}
+.lead{font-size:22px;color:#c4cfdd;max-width:720px;margin-bottom:8px}
+.intro{color:#8f9caf;max-width:720px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.center{justify-content:center}
+.btn{display:inline-block;padding:11px 18px;border:1px solid #344157;border-radius:10px;color:#e8edf5;text-decoration:none;transition:.2s}
+.btn.primary{background:#1769d1;border-color:#1769d1}.btn:hover{transform:translateY(-1px)}
+section{padding:62px 0;border-top:1px solid #202938}
+h2{font-size:32px;margin:0 0 18px}section>p{color:#aeb9c9;max-width:800px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}.chips span{padding:8px 12px;border:1px solid #2b3749;border-radius:999px;color:#c5cfdd;background:#0e141e}
+.section-note{margin-bottom:24px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.card{padding:25px;border:1px solid #263245;border-radius:16px;background:#0d131d}
+.card h3{font-size:23px;margin:8px 0}.card p{color:#aeb9c9}
+.status{display:inline-block;margin-top:8px;padding:5px 10px;border-radius:999px;background:#151d29;color:#91a0b4;font-size:13px}
+.edu{border-left:3px solid #1769d1;padding-left:18px}.edu p{color:#aeb9c9}
+.contact{text-align:center}.contact p{margin-left:auto;margin-right:auto}
+footer{text-align:center;padding:35px;color:#7f8da2;border-top:1px solid #202938}
+@media(max-width:700px){.nav nav{display:none}.hero{padding-top:70px}.grid{grid-template-columns:1fr}.lead{font-size:19px}}
+
+/* =========================================
+   INTERACTIVE CPU DASHBOARD
+   ========================================= */
+
+#cpu-lab {
+  margin-top: 70px;
+}
+
+.cpu-dashboard {
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.035);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  overflow: hidden;
+}
+
+.cpu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+#cpu-status {
+  font-family: monospace;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+
+/* CPU PIPELINE */
+
+.cpu-pipeline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 25px 0 35px;
+}
+
+.cpu-stage {
+  min-width: 105px;
+  padding: 14px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  opacity: 0.4;
+  transition: 0.4s ease;
+  background: rgba(255,255,255,0.025);
+}
+
+.cpu-stage strong {
+  display: block;
+  font-size: 13px;
+}
+
+.cpu-stage small {
+  display: block;
+  margin-top: 5px;
+  opacity: 0.6;
+  font-size: 11px;
+}
+
+
+/* ACTIVE CPU STAGE */
+
+.cpu-stage.active {
+  opacity: 1;
+  transform: translateY(-5px) scale(1.04);
+  border-color: rgba(80,210,255,0.7);
+  box-shadow:
+    0 0 15px rgba(80,210,255,0.25),
+    0 0 40px rgba(80,210,255,0.08);
+  animation: cpuGlow 1s infinite alternate;
+}
+
+@keyframes cpuGlow {
+
+  from {
+    box-shadow:
+      0 0 10px rgba(80,210,255,0.2);
+  }
+
+  to {
+    box-shadow:
+      0 0 30px rgba(80,210,255,0.45);
+  }
+
+}
+
+
+/* CPU COMPONENTS */
+
+.cpu-components {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.cpu-component {
+  padding: 18px;
+  min-height: 120px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(0,0,0,0.12);
+}
+
+.cpu-component h3 {
+  margin-top: 0;
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+
+/* CPU VALUES */
+
+#pc-display,
+#instruction-display,
+#alu-display {
+  font-family: monospace;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.055);
+}
+
+#alu-display {
+  text-align: center;
+  font-size: 22px;
+}
+
+
+/* ALU */
+
+.alu-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.alu-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(80,210,255,0.08),
+    transparent
+  );
+  transform: translateX(-100%);
+}
+
+.alu-box.active::after {
+  animation: aluScan 1s linear;
+}
+
+@keyframes aluScan {
+
+  to {
+    transform: translateX(100%);
+  }
+
+}
+
+
+/* REGISTERS */
+
+.register {
+  font-family: monospace;
+  padding: 7px 10px;
+  margin: 5px 0;
+  border-radius: 7px;
+  background: rgba(255,255,255,0.045);
+  transition: 0.3s;
+}
+
+.register.changed {
+  animation: registerFlash 0.7s ease;
+}
+
+@keyframes registerFlash {
+
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 20px rgba(80,210,255,0.35);
+  }
+
+}
+
+
+/* MEMORY */
+
+.memory-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  margin: 5px 0;
+  border-radius: 7px;
+  font-family: monospace;
+  font-size: 12px;
+  background: rgba(255,255,255,0.045);
+}
+
+.memory-row.active {
+  border: 1px solid rgba(80,210,255,0.5);
+  box-shadow: 0 0 15px rgba(80,210,255,0.15);
+}
+
+
+/* CLOCK */
+
+.cpu-clock {
+  margin-top: 20px;
+  text-align: center;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+#clock {
+  font-size: 20px;
+}
+
+
+/* BUTTONS */
+
+.cpu-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.cpu-controls button {
+  cursor: pointer;
+}
+
+
+/* EXPLANATION */
+
+#cpu-message {
+  margin-top: 20px;
+  text-align: center;
+  opacity: 0.7;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .cpu-components {
+    grid-template-columns: 1fr;
+  }
+
+  .cpu-pipeline {
+    flex-direction: column;
+  }
+
+  .cpu-pipeline > span {
+    transform: rotate(90deg);
+  }
+
+  .cpu-dashboard {
+    padding: 18px;
+  }
+
+}
